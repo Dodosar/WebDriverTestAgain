@@ -38,6 +38,7 @@ public class FirstTest {
   public void GoToSmarphones(){
 	  driver.findElement(By.xpath("//p[contains(concat(' ', @class,' '), ' pab-h3 ')]/a[@href='https://rozetka.com.ua/telefony/c4627900/']")).click();
 	  String title = driver.getTitle();
+	  System.out.println(title);
   }
   
   @BeforeTest
