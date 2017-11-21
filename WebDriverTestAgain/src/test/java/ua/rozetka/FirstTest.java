@@ -27,8 +27,14 @@ public class FirstTest {
   
   @Test(priority = 1)
   public void GoToLink(){
-	  System.out.println("Will go to link Black Friday");
 	  driver.findElement(By.xpath("//*[@id='3361']//a")).click();
+	  String title = driver.getTitle();
+	  Assert.assertTrue(title.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
+  }
+  
+  @Test(priority = 2)
+  public void GoToSmarphones(){
+	  
   }
   
   @BeforeTest
