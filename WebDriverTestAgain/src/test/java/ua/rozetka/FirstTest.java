@@ -13,7 +13,7 @@ import org.testng.annotations.AfterTest;
 public class FirstTest {
 	
   private WebDriver driver;
-  @Test(priority = 1)
+  @Test(priority = 0)
   public void f() {
 	  	driver.get("https://rozetka.com.ua/");  
 		String title = driver.getTitle();
@@ -22,7 +22,7 @@ public class FirstTest {
 			
   }
   
-  @Test(priority = 2)
+  @Test(priority = 1)
   public void GoToLink(){
 	  System.out.println("Will go to link Black Friday");
   }
