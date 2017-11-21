@@ -27,14 +27,16 @@ public class FirstTest {
   
   @Test(priority = 1)
   public void GoToLink(){
-	  driver.findElement(By.xpath("//*[@id='3361']//a")).click();
-	  String title = driver.getTitle();
-	  Assert.assertTrue(title.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
+	  driver.findElement(By.xpath("//a[@data-title='Смартфоны, ТВ и электроника']")).click();
+	  String title1 = driver.getTitle();
+	  System.out.println(title1);
+	  Assert.assertTrue(title1.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
   }
   
   @Test(priority = 2)
   public void GoToSmarphones(){
-	  
+	  driver.findElement(By.xpath("//p[contains(concat(' ', @class,' '), ' pab-h3 ')]/a[@href='https://rozetka.com.ua/telefony/c4627900/']")).click();
+	  String title = driver.getTitle();
   }
   
   @BeforeTest
