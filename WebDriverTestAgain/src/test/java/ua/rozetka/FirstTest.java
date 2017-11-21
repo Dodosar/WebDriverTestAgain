@@ -13,15 +13,20 @@ import org.testng.annotations.AfterTest;
 public class FirstTest {
 	
   private WebDriver driver;
-  @Test
+  @Test(priority = 1)
   public void f() {
 	  	driver.get("https://rozetka.com.ua/");  
 		String title = driver.getTitle();
 		System.out.println(title);
 		Assert.assertTrue(title.equals("»нтернет-магазин ROZETKAЩ: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
-		
-	
+			
   }
+  
+  @Test(priority = 2)
+  public void GoToLink(){
+	  System.out.println("Will go to link Black Friday");
+  }
+  
   @BeforeTest
   public void setUp() {
 	 		driver = new ChromeDriver();	
