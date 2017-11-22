@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
@@ -20,6 +22,7 @@ public class FirstTest {
   @Test(priority = 0)
   public void f() {
 	  	driver.get("https://rozetka.com.ua/");  
+	  	driver.manage().window().maximize();
 		String title = driver.getTitle();
 		System.out.println(title);
 		try{
@@ -33,8 +36,9 @@ public class FirstTest {
   
   @Test(priority = 1)
   public void GoToLink(){
+	  driver.findElement(By.xpath("//a[@data-title='Смартфоны, ТВ и электроника']"));
 	  driver.findElement(By.xpath("//a[@data-title='Смартфоны, ТВ и электроника']")).click();
-	  String title1 = driver.getTitle();
+	 /* String title1 = driver.getTitle();
 	  System.out.println(title1);
 	  try{
 	  Assert.assertTrue(title1.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
@@ -42,21 +46,31 @@ public class FirstTest {
 	  }
 	  catch(Exception e){
 		  System.out.println("Test Faild");
-	  }
+	  }*/
   }
   
-  @Test(priority = 2)
+  /*@Test(priority = 2)
   public void GoToSmarphones(){
 	  driver.findElement(By.xpath("//p[contains(concat(' ', @class,' '), ' pab-h3 ')]/a[@href='https://rozetka.com.ua/telefony/c4627900/']")).click();
 	  String title = driver.getTitle();
 	  System.out.println(title);
-  }
+  }*/
   
   @BeforeTest
-  public void setUp() {
+  @Parameters("browser")
+  public void setUp(String browser) throws Exception {
+	  		if(browser.equalsIgnoreCase("chrome")){
 	  		System.setProperty("webdriver.chrome.driver",".\\chromedriver.exe");
 	 		driver = new ChromeDriver();	
-	 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	  		}
+	  		else if(browser.equalsIgnoreCase("firefox")){
+	  			System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
+	  			driver = new FirefoxDriver();
+	  		}
+	  		else{
+	  			throw new Exception("Browser is Not Correct");
+	  		}
+	 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	 		/*
 			 * 	System.out.println("Welcome to Maven World");
 	    		System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
@@ -67,7 +81,7 @@ public class FirstTest {
 
   @AfterTest
   public void Close() {
-	  driver.quit();
+	 // driver.quit();
   }
 
 }
