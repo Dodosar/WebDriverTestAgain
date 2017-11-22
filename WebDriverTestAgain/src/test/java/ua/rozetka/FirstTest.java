@@ -20,8 +20,7 @@ public class FirstTest {
 
 	@Test(priority = 0)
 	public void f() {
-		driver.get("https://rozetka.com.ua/");
-		driver.manage().window().maximize();
+		driver.get("https://rozetka.com.ua/");		
 		String title = driver.getTitle();
 		System.out.println(title);
 		try {
@@ -60,6 +59,7 @@ public class FirstTest {
 	@BeforeTest
 	@Parameters("browser")
 	public void setUp(String browser) throws Exception {
+		driver.manage().window().maximize();
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
 			driver = new ChromeDriver();
