@@ -70,12 +70,6 @@ public class FirstTest {
 			throw new Exception("Browser is Not Correct");
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		/*
-		 * System.out.println("Welcome to Maven World");
-		 * System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
-		 * driver = new FirefoxDriver();
-		 * driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		 */
 	}
 
 	@AfterTest
