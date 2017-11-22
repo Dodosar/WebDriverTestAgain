@@ -11,12 +11,30 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
-
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Document;
+import ua.rozetka.PhTvElectronics;
 
 public class FirstTest {
 
 	private WebDriver driver;
+	
+	PhTvElectronics objPhTvElectronics;
+	
+	@BeforeTest
+	@Parameters("browser")
+	public void setUp(String browser) throws Exception {
+		driver.manage().window().maximize();
+		if (browser.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		} else {
+			throw new Exception("Browser is Not Correct");
+		}
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
 
 	@Test(priority = 0)
 	public void f() {
@@ -34,11 +52,11 @@ public class FirstTest {
 
 	@Test(priority = 1)
 	public void GoToLink() {
-		driver.findElement(By
-				.xpath("//a[@data-title='Смартфоны, ТВ и электроника']"));
-		driver.findElement(
-				By.xpath("//a[@data-title='Смартфоны, ТВ и электроника']"))
-				.click();
+		objPhTvElectronics = new PhTvElectronics(driver);
+		
+		objPhTvElectronics.GoToSmartTVElect();
+		
+		
 		/*
 		 * String title1 = driver.getTitle(); System.out.println(title1); try{
 		 * Assert.assertTrue(title1.equals(
@@ -55,22 +73,6 @@ public class FirstTest {
 	 * )).click(); String title = driver.getTitle(); System.out.println(title);
 	 * }
 	 */
-
-	@BeforeTest
-	@Parameters("browser")
-	public void setUp(String browser) throws Exception {
-		driver.manage().window().maximize();
-		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		} else {
-			throw new Exception("Browser is Not Correct");
-		}
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	}
 
 	@AfterTest
 	public void Close() {
