@@ -55,7 +55,14 @@ public class FirstTest {
 		objPhTvElectronics = new PhTvElectronics(driver);
 		
 		objPhTvElectronics.GoToSmartTVElect();
-		
+		try{
+		Assert.assertTrue(objPhTvElectronics.getTitleFromPage().equals("Test"));
+		System.out.println("test Passed");
+		}
+		catch(Exception e){
+			System.out.println("Test Failed");
+		}
+	
 		
 		/*
 		 * String title1 = driver.getTitle(); System.out.println(title1); try{
