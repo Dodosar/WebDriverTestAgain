@@ -22,8 +22,13 @@ public class FirstTest {
 	  	driver.get("https://rozetka.com.ua/");  
 		String title = driver.getTitle();
 		System.out.println(title);
+		try{
 		Assert.assertTrue(title.equals("Интернет-магазин ROZETKA™: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
-			
+		System.out.println("Test Pass");
+		}
+		  catch(Exception e){
+			  System.out.println("Test Faild");
+		  }
   }
   
   @Test(priority = 1)
@@ -31,7 +36,13 @@ public class FirstTest {
 	  driver.findElement(By.xpath("//a[@data-title='Смартфоны, ТВ и электроника']")).click();
 	  String title1 = driver.getTitle();
 	  System.out.println(title1);
+	  try{
 	  Assert.assertTrue(title1.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
+	  System.out.println("Test Pass");
+	  }
+	  catch(Exception e){
+		  System.out.println("Test Faild");
+	  }
   }
   
   @Test(priority = 2)
@@ -43,13 +54,13 @@ public class FirstTest {
   
   @BeforeTest
   public void setUp() {
+	  		System.setProperty("webdriver.chrome.driver",".\\chromedriver.exe");
 	 		driver = new ChromeDriver();	
-	 		driver.manage().window().maximize();
 	 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	 		/*
 			 * 	System.out.println("Welcome to Maven World");
-	    		System.setProperty("webdriver.gecko.driver", "D:\\BrowsersDrivers\\geckodriver.exe");
-	    		WebDriver driver = new FirefoxDriver();       
+	    		System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
+	    		driver = new FirefoxDriver();       
 	    		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			 */
   }
