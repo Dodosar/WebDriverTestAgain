@@ -1,7 +1,8 @@
 package ua.rozetka;
 
+import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
-
+import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,19 +12,21 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
+
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Document;
+
 import ua.rozetka.PhTvElectronics;
 
 public class FirstTest {
 
 	private WebDriver driver;
-	
+
 	PhTvElectronics objPhTvElectronics;
 	
+	/*@Parameters("browser")
 	@BeforeTest
-	@Parameters("browser")
 	public void setUp(String browser) throws Exception {
-		driver.manage().window().maximize();
+
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -33,17 +36,35 @@ public class FirstTest {
 		} else {
 			throw new Exception("Browser is Not Correct");
 		}
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}*/
+
+
+	@BeforeTest
+	public void setUp() throws Exception {
+
+		driver = Browsers.CHROME.create();		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://rozetka.com.ua/");	
+		driver.manage().window().maximize();
+	}
+
+	@BeforeTest
+	public void setUp1() throws Exception {
+		driver = Browsers.FIREFOX.create();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
 	@Test(priority = 0)
 	public void f() {
-		driver.get("https://rozetka.com.ua/");		
+		driver.get("https://rozetka.com.ua/");
 		String title = driver.getTitle();
 		System.out.println(title);
 		try {
-			Assert.assertTrue(title
-					.equals("»нтернет-магазин ROZETKAЩ: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
+			AssertJUnit
+					.assertTrue(title
+							.equals("»нтернет-магазин ROZETKAЩ: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
 			System.out.println("Test Pass");
 		} catch (Exception e) {
 			System.out.println("Test Faild");
@@ -53,17 +74,16 @@ public class FirstTest {
 	@Test(priority = 1)
 	public void GoToLink() {
 		objPhTvElectronics = new PhTvElectronics(driver);
-		
+
 		objPhTvElectronics.GoToSmartTVElect();
-		try{
-		Assert.assertTrue(objPhTvElectronics.getTitleFromPage().equals("Test"));
-		System.out.println("test Passed");
-		}
-		catch(Exception e){
+		try {
+			AssertJUnit.assertTrue(objPhTvElectronics.getTitleFromPage()
+					.equals("Test"));
+			System.out.println("test Passed");
+		} catch (Exception e) {
 			System.out.println("Test Failed");
 		}
-	
-		
+
 		/*
 		 * String title1 = driver.getTitle(); System.out.println(title1); try{
 		 * Assert.assertTrue(title1.equals(
@@ -82,7 +102,7 @@ public class FirstTest {
 	 */
 
 	@AfterTest
-	public void Close() {
+	public void Teardown() {
 		// driver.quit();
 	}
 
