@@ -19,7 +19,13 @@ public class PhTvElectronics {
 	}
 	
 	public void GoToSmartTVElect(){
+		try{
 		link.click();
+		System.out.println("Link for test 2 passed");
+	}
+		catch(Exception e){
+			System.out.println("Link for test 2 failed");
+		}
 	}
 	
 	public String getTitleFromPage(){

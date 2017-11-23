@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="2" failed="0" total="2" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="80" started-at="2017-11-23T14:12:00Z" finished-at="2017-11-23T14:12:01Z">
+    <groups>
+    </groups>
+    <test name="ChromeTest" duration-ms="80" started-at="2017-11-23T14:12:00Z" finished-at="2017-11-23T14:12:01Z">
+      <class name="ua.rozetka.FirstTest">
+        <test-method status="FAIL" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@475530b9]" name="setUp" is-config="true" duration-ms="0" started-at="2017-11-23T16:12:00Z" finished-at="2017-11-23T16:12:00Z">
+          <exception class="java.lang.IllegalStateException">
+            <message>
+              <![CDATA[The path to the driver executable must be set by the phantomjs.binary.path capability/system property/PATH variable; for more information, see https://github.com/ariya/phantomjs/wiki. The latest version can be downloaded from http://phantomjs.org/download.html]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalStateException: The path to the driver executable must be set by the phantomjs.binary.path capability/system property/PATH variable; for more information, see https://github.com/ariya/phantomjs/wiki. The latest version can be downloaded from http://phantomjs.org/download.html
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
+	at org.openqa.selenium.phantomjs.PhantomJSDriverService.findPhantomJS(PhantomJSDriverService.java:236)
+	at org.openqa.selenium.phantomjs.PhantomJSDriverService.createDefaultService(PhantomJSDriverService.java:181)
+	at org.openqa.selenium.phantomjs.PhantomJSDriver.<init>(PhantomJSDriver.java:105)
+	at org.openqa.selenium.phantomjs.PhantomJSDriver.<init>(PhantomJSDriver.java:95)
+	at ua.rozetka.FirstTest.setUp(FirstTest.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalStateException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="f()[pri:0, instance:ua.rozetka.FirstTest@475530b9]" name="f" duration-ms="2" started-at="2017-11-23T16:12:00Z" finished-at="2017-11-23T16:12:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="SKIP" signature="GoToLink()[pri:0, instance:ua.rozetka.FirstTest@475530b9]" name="GoToLink" duration-ms="1" started-at="2017-11-23T16:12:01Z" finished-at="2017-11-23T16:12:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoToLink -->
+        <test-method status="SKIP" signature="Teardown()[pri:0, instance:ua.rozetka.FirstTest@475530b9]" name="Teardown" is-config="true" duration-ms="0" started-at="2017-11-23T16:12:01Z" finished-at="2017-11-23T16:12:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- ua.rozetka.FirstTest -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Suite -->
+</testng-results>

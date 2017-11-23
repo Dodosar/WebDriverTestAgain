@@ -1,13 +1,21 @@
 package ua.rozetka;
 
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
+
 import java.util.concurrent.TimeUnit;
+
 import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
@@ -23,37 +31,19 @@ public class FirstTest {
 
 	PhTvElectronics objPhTvElectronics;
 	
-	/*@Parameters("browser")
-	@BeforeTest
-	public void setUp(String browser) throws Exception {
-
-		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		} else {
-			throw new Exception("Browser is Not Correct");
-		}
-
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	}*/
-
+	@BeforeClass
+	public static void setupClass() {
+		ChromeDriverManager.getInstance().setup();
+		
+	}
 
 	@BeforeTest
 	public void setUp() throws Exception {
 
-		driver = Browsers.CHROME.create();		
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://rozetka.com.ua/");	
 		driver.manage().window().maximize();
-	}
-
-	@BeforeTest
-	public void setUp1() throws Exception {
-		driver = Browsers.FIREFOX.create();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
 	@Test(priority = 0)
@@ -103,7 +93,10 @@ public class FirstTest {
 
 	@AfterTest
 	public void Teardown() {
-		// driver.quit();
-	}
+		if (driver != null){
+			driver.quit();
+		}
+	}	
+	
 
 }
