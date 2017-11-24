@@ -31,10 +31,11 @@ public class FirstTest {
 
 	PhTvElectronics objPhTvElectronics;
 	
+	MainPage objMainPage;
+	
 	@BeforeClass
 	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
-		
+		ChromeDriverManager.getInstance().setup();		
 	}
 
 	@BeforeTest
@@ -42,15 +43,16 @@ public class FirstTest {
 
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		driver.get("https://rozetka.com.ua/");	
+		
 		driver.manage().window().maximize();
-	}
+	}	
 
 	@Test(priority = 0)
 	public void f() {
-		driver.get("https://rozetka.com.ua/");
-		String title = driver.getTitle();
-		System.out.println(title);
+		System.out.println("Step 1: Check Title on Main Page");
+		String title = objMainPage.getTitleManePage();
 		try {
 			AssertJUnit
 					.assertTrue(title
