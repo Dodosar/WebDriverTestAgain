@@ -51,11 +51,12 @@ public class FirstTest {
 
 	@Test(priority = 0)
 	public void f() {
+		objMainPage = new MainPage(driver);
+		
 		System.out.println("Step 1: Check Title on Main Page");
-		String title = objMainPage.getTitleManePage();
 		try {
 			AssertJUnit
-					.assertTrue(title
+					.assertTrue(objMainPage.getTitleManePage()
 							.equals("Интернет-магазин ROZETKA™: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
 			System.out.println("Test Pass");
 		} catch (Exception e) {
@@ -66,7 +67,8 @@ public class FirstTest {
 	@Test(priority = 1)
 	public void GoToLink() {
 		objPhTvElectronics = new PhTvElectronics(driver);
-
+		
+		System.out.println("Step 2: Click to link Page of All SmatPhones");
 		objPhTvElectronics.GoToSmartTVElect();
 		try {
 			AssertJUnit.assertTrue(objPhTvElectronics.getTitleFromPage()
@@ -76,13 +78,6 @@ public class FirstTest {
 			System.out.println("Test Failed");
 		}
 
-		/*
-		 * String title1 = driver.getTitle(); System.out.println(title1); try{
-		 * Assert.assertTrue(title1.equals(
-		 * "Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"
-		 * )); System.out.println("Test Pass"); } catch(Exception e){
-		 * System.out.println("Test Faild"); }
-		 */
 	}
 
 	/*
