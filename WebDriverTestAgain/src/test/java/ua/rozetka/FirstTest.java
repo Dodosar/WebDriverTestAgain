@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -23,60 +24,61 @@ import org.testng.annotations.AfterTest;
 
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Document;
 
-import ua.rozetka.PhTvElectronics;
+import ua.rozetka.PhTvElectronicsPage;
 
 public class FirstTest {
 
 	private WebDriver driver;
 
-	PhTvElectronics objPhTvElectronics;
-	
-	MainPage objMainPage;
-	
+	RozetkaSite objRozetka;
+
 	@BeforeClass
 	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();		
+		ChromeDriverManager.getInstance().setup();
 	}
 
 	@BeforeTest
 	public void setUp() throws Exception {
 
 		driver = new ChromeDriver();
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.get("https://rozetka.com.ua/");	
-		
+		// WebDriverWait wait = new WebDriverWait(driver, 30,500);
+
+		driver.get("https://rozetka.com.ua/");
+
 		driver.manage().window().maximize();
-	}	
+
+	}
 
 	@Test(priority = 0)
 	public void f() {
-		objMainPage = new MainPage(driver);
-		
+		objRozetka = new RozetkaSite(driver);
 		System.out.println("Step 1: Check Title on Main Page");
 		try {
 			AssertJUnit
-					.assertTrue(objMainPage.getTitleManePage()
+					.assertTrue(objRozetka
+							.mainPage()
+							.getTitleManePage()
 							.equals("Интернет-магазин ROZETKA™: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
-			System.out.println("Test Pass");
+			System.out.println("Test Passed");
 		} catch (Exception e) {
-			System.out.println("Test Faild");
+			System.out.println("Test Failed");
 		}
-	}
 
-	@Test(priority = 1)
-	public void GoToLink() {
-		objPhTvElectronics = new PhTvElectronics(driver);
-		
 		System.out.println("Step 2: Click to link Page of All SmatPhones");
-		objPhTvElectronics.GoToSmartTVElect();
+		objRozetka.electronics().GoToSmartTVElect();
 		try {
-			AssertJUnit.assertTrue(objPhTvElectronics.getTitleFromPage()
-					.equals("Test"));
+			AssertJUnit.assertTrue(objRozetka.electronics().getTitleFromPage()
+					.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
 			System.out.println("test Passed");
 		} catch (Exception e) {
 			System.out.println("Test Failed");
 		}
+	}
+
+	@Test(priority = 1)
+	public void SecondPAge() {
 
 	}
 
@@ -90,10 +92,9 @@ public class FirstTest {
 
 	@AfterTest
 	public void Teardown() {
-		if (driver != null){
+		if (driver != null) {
 			driver.quit();
 		}
-	}	
-	
+	}
 
 }

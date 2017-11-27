@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" name="Failed suite [Suite]" parallel="methods">
-  <test name="ChromeTest(failed)" parallel="methods">
+<suite name="Failed suite [Suite]">
+  <test name="ChromeTest(failed)">
     <classes>
       <class name="ua.rozetka.FirstTest">
         <methods>
           <include name="setUp"/>
+          <include name="Teardown"/>
           <include name="f"/>
           <include name="setupClass"/>
-          <include name="GoToLink"/>
         </methods>
       </class> <!-- ua.rozetka.FirstTest -->
     </classes>
