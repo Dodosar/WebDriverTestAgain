@@ -31,34 +31,57 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">ChromeTest</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">0</td><td class="numi">0.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">ChromeTest</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">0</td><td class="numi">6.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">ChromeTest &#8212; failed (configuration methods)</th></tr>
-<tr class="failedodd"><td rowspan="1">ua.rozetka.FirstTest</td><td><a href="#m1"><b>setUp</b>  </a></td><td class="numi">1</td><td>1511446320927</td><td class="numi">0</td></tr>
+<tr class="failedodd"><td rowspan="1">ua.rozetka.FirstTest</td><td><a href="#m1"><b>setupClass</b>  </a></td><td class="numi">1</td><td>1511512313632</td><td class="numi">0</td></tr>
 <tr><th colspan="4">ChromeTest &#8212; skipped (configuration methods)</th></tr>
-<tr class="skippedodd"><td rowspan="1">ua.rozetka.FirstTest</td><td><a href="#m2"><b>Teardown</b>  </a></td><td class="numi">1</td><td>1511446321003</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">ua.rozetka.FirstTest</td><td><a href="#m2"><b>Teardown</b>  </a></td><td class="numi">1</td><td>1511512313720</td><td class="numi">0</td></tr>
 <tr><th colspan="4">ChromeTest &#8212; skipped</th></tr>
-<tr class="skippedodd"><td rowspan="2">ua.rozetka.FirstTest</td><td><a href="#m3"><b>GoToLink</b>  </a></td><td class="numi">1</td><td>1511446321000</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m4"><b>f</b>  </a></td><td class="numi">1</td><td>1511446320996</td><td class="numi">2</td></tr>
+<tr class="skippedodd"><td rowspan="2">ua.rozetka.FirstTest</td><td><a href="#m3"><b>GoToLink</b>  </a></td><td class="numi">1</td><td>1511512313716</td><td class="numi">2</td></tr><tr class="skippedodd"><td><a href="#m4"><b>f</b>  </a></td><td class="numi">1</td><td>1511512313711</td><td class="numi">2</td></tr>
 </table>
 <h1>ChromeTest</h1>
-<h2 id="m1">ua.rozetka.FirstTest:setUp</h2>
+<h2 id="m1">ua.rozetka.FirstTest:setupClass</h2>
 <div style="padding-left:3em">
-<p>The path to the driver executable must be set by the phantomjs.binary.path capability/system property/PATH variable; for more information, see https://github.com/ariya/phantomjs/wiki. The latest version can be downloaded from http://phantomjs.org/download.html</p>
-com.google.common.base.Preconditions.checkState(Preconditions.java:738)
-<br/>at org.openqa.selenium.phantomjs.PhantomJSDriverService.findPhantomJS(PhantomJSDriverService.java:236)
-<br/>at org.openqa.selenium.phantomjs.PhantomJSDriverService.createDefaultService(PhantomJSDriverService.java:181)
-<br/>at org.openqa.selenium.phantomjs.PhantomJSDriver.&lt;init&gt;(PhantomJSDriver.java:105)
-<br/>at org.openqa.selenium.phantomjs.PhantomJSDriver.&lt;init&gt;(PhantomJSDriver.java:95)
-<br/>at ua.rozetka.FirstTest.setUp(FirstTest.java:59)
-<br/>23 lines not shown
+<p>Exception managing driver for [chromedriver]</p>
+io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:288)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:279)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:839)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:787)
+<br/>at ua.rozetka.FirstTest.setupClass(FirstTest.java:36)
+<br/>14 lines not shown
+<p>Caused by chromedriver.storage.googleapis.com</p>
+java.net.InetAddress.getAllByName0(Unknown Source)
+<br/>at java.net.InetAddress.getAllByName(Unknown Source)
+<br/>at java.net.InetAddress.getAllByName(Unknown Source)
+<br/>at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+<br/>at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+<br/>at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br/>at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br/>at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br/>at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br/>at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br/>at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br/>at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br/>at io.github.bonigarcia.wdm.WdmHttpClient.execute(WdmHttpClient.java:90)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.getDriversFromXml(BrowserManager.java:684)
+<br/>at io.github.bonigarcia.wdm.ChromeDriverManager.getDrivers(ChromeDriverManager.java:46)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:203)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:279)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:839)
+<br/>at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:787)
+<br/>at ua.rozetka.FirstTest.setupClass(FirstTest.java:36)
+<br/>14 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
 <h2 id="m2">ua.rozetka.FirstTest:Teardown</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">ua.rozetka.FirstTest:f</h2>
+<h2 id="m3">ua.rozetka.FirstTest:GoToLink</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">ua.rozetka.FirstTest:GoToLink</h2>
+<h2 id="m4">ua.rozetka.FirstTest:f</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

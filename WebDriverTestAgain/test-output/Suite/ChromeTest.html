@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/2</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Nov 23 16:12:00 EET 2017</td>
+<td>Started on:</td><td>Fri Nov 24 10:31:47 EET 2017</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (80 ms)</td>
+<tr><td>Total time:</td><td>6 seconds (6620 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,22 +75,43 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ua.rozetka.FirstTest.setUp()'><b>setUp</b><br>Test class: ua.rozetka.FirstTest</td>
-<td><div><pre>java.lang.IllegalStateException: The path to the driver executable must be set by the phantomjs.binary.path capability/system property/PATH variable; for more information, see https://github.com/ariya/phantomjs/wiki. The latest version can be downloaded from http://phantomjs.org/download.html
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
-	at org.openqa.selenium.phantomjs.PhantomJSDriverService.findPhantomJS(PhantomJSDriverService.java:236)
-	at org.openqa.selenium.phantomjs.PhantomJSDriverService.createDefaultService(PhantomJSDriverService.java:181)
-	at org.openqa.selenium.phantomjs.PhantomJSDriver.&lt;init&gt;(PhantomJSDriver.java:105)
-	at org.openqa.selenium.phantomjs.PhantomJSDriver.&lt;init&gt;(PhantomJSDriver.java:95)
-	at ua.rozetka.FirstTest.setUp(FirstTest.java:59)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1860513229", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1860513229'><pre>java.lang.IllegalStateException: The path to the driver executable must be set by the phantomjs.binary.path capability/system property/PATH variable; for more information, see https://github.com/ariya/phantomjs/wiki. The latest version can be downloaded from http://phantomjs.org/download.html
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
-	at org.openqa.selenium.phantomjs.PhantomJSDriverService.findPhantomJS(PhantomJSDriverService.java:236)
-	at org.openqa.selenium.phantomjs.PhantomJSDriverService.createDefaultService(PhantomJSDriverService.java:181)
-	at org.openqa.selenium.phantomjs.PhantomJSDriver.&lt;init&gt;(PhantomJSDriver.java:105)
-	at org.openqa.selenium.phantomjs.PhantomJSDriver.&lt;init&gt;(PhantomJSDriver.java:95)
-	at ua.rozetka.FirstTest.setUp(FirstTest.java:59)
+<td title='ua.rozetka.FirstTest.setupClass()'><b>setupClass</b><br>Test class: ua.rozetka.FirstTest</td>
+<td><div><pre>io.github.bonigarcia.wdm.WebDriverManagerException: Exception managing driver for [chromedriver]
+	at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:288)
+	at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:279)
+	at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:839)
+	at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:787)
+	at ua.rozetka.FirstTest.setupClass(FirstTest.java:36)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: chromedriver.storage.googleapis.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at io.github.bonigarcia.wdm.WdmHttpClient.execute(WdmHttpClient.java:90)
+	at io.github.bonigarcia.wdm.BrowserManager.getDriversFromXml(BrowserManager.java:684)
+	at io.github.bonigarcia.wdm.ChromeDriverManager.getDrivers(ChromeDriverManager.java:46)
+	at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:203)
+	... 17 more
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1124873678", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1124873678'><pre>io.github.bonigarcia.wdm.WebDriverManagerException: Exception managing driver for [chromedriver]
+	at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:288)
+	at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:279)
+	at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:839)
+	at io.github.bonigarcia.wdm.BrowserManager.setup(BrowserManager.java:787)
+	at ua.rozetka.FirstTest.setupClass(FirstTest.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -99,23 +120,34 @@ function toggleAllBoxes() {
 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
-	at org.testng.TestRunner.run(TestRunner.java:609)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:175)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:107)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: chromedriver.storage.googleapis.com
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at io.github.bonigarcia.wdm.WdmHttpClient.execute(WdmHttpClient.java:90)
+	at io.github.bonigarcia.wdm.BrowserManager.getDriversFromXml(BrowserManager.java:684)
+	at io.github.bonigarcia.wdm.ChromeDriverManager.getDrivers(ChromeDriverManager.java:46)
+	at io.github.bonigarcia.wdm.BrowserManager.manage(BrowserManager.java:203)
+	... 17 more
 </pre></div></td>
 <td>0</td>
-<td>null</td></tr>
+<td>ua.rozetka.FirstTest@5e5792a0</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -141,12 +173,12 @@ function toggleAllBoxes() {
 <td title='ua.rozetka.FirstTest.GoToLink()'><b>GoToLink</b><br>Test class: ua.rozetka.FirstTest</td>
 <td></td>
 <td>0</td>
-<td>ua.rozetka.FirstTest@475530b9</td></tr>
+<td>ua.rozetka.FirstTest@5e5792a0</td></tr>
 <tr>
 <td title='ua.rozetka.FirstTest.f()'><b>f</b><br>Test class: ua.rozetka.FirstTest</td>
 <td></td>
 <td>0</td>
-<td>ua.rozetka.FirstTest@475530b9</td></tr>
+<td>ua.rozetka.FirstTest@5e5792a0</td></tr>
 </table><p>
 </body>
 </html>
