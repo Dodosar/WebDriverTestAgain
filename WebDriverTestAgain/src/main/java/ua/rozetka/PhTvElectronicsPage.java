@@ -1,8 +1,11 @@
 package ua.rozetka;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -28,12 +31,21 @@ public class PhTvElectronicsPage {
 	
 	public void GoToSmartTVElect(){
 		try{
+			Actions action1 = new Actions(driver);
+		       
+		       Action action2 = action1.moveToElement(link).build();
+		       
+		       action2.perform();
+	
+		/*JavascriptExecutor exutor = (JavascriptExecutor)driver;
+		exutor.executeScript("arguments[0].click();", link);*/
 		link.click();
+		System.out.println(link.isEnabled());
 		//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1"))); //header.title-page>*:first-child
-		WebElement title = driver.findElement(By.xpath("//*[@id='content-inner-block']//header/h1"));
 		System.out.println("test passed");
 	}
 		catch(Exception e){
+			System.out.println(e.getMessage());
 			System.out.println("test failed");
 		}
 	}

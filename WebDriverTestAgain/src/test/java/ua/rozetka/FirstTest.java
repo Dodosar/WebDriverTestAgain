@@ -60,7 +60,7 @@ public class FirstTest {
 					.assertTrue(objRozetka
 							.mainPage()
 							.getTitleManePage()
-							.equals("Интернет-магазин ROZETKA™: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"));
+							.equals(TitleNames.MAINPAGE.toString()));
 			System.out.println("Test Passed");
 		} catch (Exception e) {
 			System.out.println("Test Failed");
@@ -69,9 +69,10 @@ public class FirstTest {
 		System.out.println("Step 2: Click to link Page of All SmatPhones");
 		objRozetka.electronics().GoToSmartTVElect();
 		try {
+			System.out.println(objRozetka.electronics().getTitleFromPage());
 			AssertJUnit.assertTrue(objRozetka.electronics().getTitleFromPage()
-					.equals("Телефоны, ТВ и электроника - Rozetka.ua | Купить Телефоны, ТВ и электроника в Киеве: цена, отзывы, продажа"));
-			System.out.println("test Passed");
+					.equals(TitleNames.SMARTPAGE.toString()));
+			System.out.println("Test Passed");
 		} catch (Exception e) {
 			System.out.println("Test Failed");
 		}
@@ -90,11 +91,11 @@ public class FirstTest {
 	 * }
 	 */
 
-	@AfterTest
+	/*@AfterTest
 	public void Teardown() {
 		if (driver != null) {
 			driver.quit();
 		}
-	}
+	}*/
 
 }
