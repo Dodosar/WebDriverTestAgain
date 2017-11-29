@@ -43,9 +43,7 @@ public class FirstTest {
 		driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		// WebDriverWait wait = new WebDriverWait(driver, 30,500);
-
-		driver.get("https://rozetka.com.ua/");
+		// WebDriverWait wait = new WebDriverWait(driver, 30,500);	
 
 		driver.manage().window().maximize();
 
@@ -53,6 +51,7 @@ public class FirstTest {
 
 	@Test(priority = 0)
 	public void f() {
+		driver.get("https://rozetka.com.ua/");
 		objRozetka = new RozetkaSite(driver);
 		System.out.println("Step 1: Check Title on Main Page");
 		try {
@@ -91,11 +90,11 @@ public class FirstTest {
 	 * }
 	 */
 
-	/*@AfterTest
+	@AfterTest
 	public void Teardown() {
 		if (driver != null) {
 			driver.quit();
 		}
-	}*/
+	}
 
 }

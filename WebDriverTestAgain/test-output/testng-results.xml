@@ -2,27 +2,27 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="11830" started-at="2017-11-28T14:13:45Z" finished-at="2017-11-28T14:13:57Z">
+  <suite name="Suite" duration-ms="14763" started-at="2017-11-29T10:18:24Z" finished-at="2017-11-29T10:18:38Z">
     <groups>
     </groups>
-    <test name="ChromeTest" duration-ms="11830" started-at="2017-11-28T14:13:45Z" finished-at="2017-11-28T14:13:57Z">
+    <test name="ChromeTest" duration-ms="14763" started-at="2017-11-29T10:18:24Z" finished-at="2017-11-29T10:18:38Z">
       <class name="ua.rozetka.FirstTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@3ffc5af1]" name="setUp" is-config="true" duration-ms="10570" started-at="2017-11-28T16:13:45Z" finished-at="2017-11-28T16:13:56Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setUp" is-config="true" duration-ms="4152" started-at="2017-11-29T12:18:24Z" finished-at="2017-11-29T12:18:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@3ffc5af1]" name="setupClass" is-config="true" duration-ms="886" started-at="2017-11-28T16:13:56Z" finished-at="2017-11-28T16:13:57Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setupClass" is-config="true" duration-ms="845" started-at="2017-11-29T12:18:28Z" finished-at="2017-11-29T12:18:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="FAIL" signature="f()[pri:0, instance:ua.rozetka.FirstTest@3ffc5af1]" name="f" duration-ms="358" started-at="2017-11-28T16:13:57Z" finished-at="2017-11-28T16:13:57Z">
+        <test-method status="FAIL" signature="f()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="f" duration-ms="5144" started-at="2017-11-29T12:18:29Z" finished-at="2017-11-29T12:18:34Z">
           <exception class="java.lang.AssertionError">
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 
 	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
 	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
 	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at ua.rozetka.FirstTest.f(FirstTest.java:73)
+	at ua.rozetka.FirstTest.f(FirstTest.java:72)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -53,10 +53,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="SecondPAge()[pri:0, instance:ua.rozetka.FirstTest@3ffc5af1]" name="SecondPAge" duration-ms="1" started-at="2017-11-28T16:13:57Z" finished-at="2017-11-28T16:13:57Z">
+        <test-method status="PASS" signature="SecondPAge()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="SecondPAge" duration-ms="1" started-at="2017-11-29T12:18:34Z" finished-at="2017-11-29T12:18:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SecondPAge -->
+        <test-method status="PASS" signature="Teardown()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="Teardown" is-config="true" duration-ms="4607" started-at="2017-11-29T12:18:34Z" finished-at="2017-11-29T12:18:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
       </class> <!-- ua.rozetka.FirstTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->

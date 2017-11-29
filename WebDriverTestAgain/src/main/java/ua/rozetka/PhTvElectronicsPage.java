@@ -12,47 +12,41 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class PhTvElectronicsPage {
-	
+
 	WebDriver driver;
 	WebDriverWait wait;
-	
-	@FindBy(xpath="//*[@id='3361']/a")
+
+	@FindBy(xpath = "//*[@id='3361']/a")
 	WebElement link;
-	
-	
-	
-	public PhTvElectronicsPage(WebDriver driver){
+
+	public PhTvElectronicsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		wait = new WebDriverWait(driver, 30,500);
+		wait = new WebDriverWait(driver, 30, 500);
+
 	}
-	
-	public void GoToSmartTVElect(){
-		try{
-			Actions action1 = new Actions(driver);
-		       
-		       Action action2 = action1.moveToElement(link).build();
-		       
-		       action2.perform();
-	
-		/*JavascriptExecutor exutor = (JavascriptExecutor)driver;
-		exutor.executeScript("arguments[0].click();", link);*/
-		link.click();
-		System.out.println(link.isEnabled());
-		//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1"))); //header.title-page>*:first-child
-		System.out.println("test passed");
-	}
-		catch(Exception e){
-			System.out.println(e.getMessage());
+
+	public void GoToSmartTVElect() {
+
+		try {
+
+			JavascriptExecutor exutor = (JavascriptExecutor) driver;
+			exutor.executeScript("arguments[0].click();", link);
+			link.click();
+
+			// wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
+			// //header.title-page>*:first-child
+			System.out.println("test passed");
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
 			System.out.println("test failed");
 		}
 	}
-	
-	public String getTitleFromPage(){
+
+	public String getTitleFromPage() {
 		String title = driver.getTitle();
-		return title;		
+		return title;
 	}
 
 }

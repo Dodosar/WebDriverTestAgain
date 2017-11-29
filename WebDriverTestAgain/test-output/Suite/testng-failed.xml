@@ -6,6 +6,7 @@
       <class name="ua.rozetka.FirstTest">
         <methods>
           <include name="setUp"/>
+          <include name="Teardown"/>
           <include name="f"/>
           <include name="setupClass"/>
         </methods>
