@@ -1,6 +1,11 @@
 package ua.rozetka;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,10 +20,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PhTvElectronicsPage {
 
 	WebDriver driver;
-	WebDriverWait wait;
+	WebDriverWait wait;	
+	IsElementPresent objForThisLement;
 
 	@FindBy(xpath = "//*[@id='3361']/a")
 	WebElement link;
+	
+	@FindBy(xpath = "//*[@id='content-inner-block']//header/h1")
+	WebElement titleForSecondPage;
 
 	public PhTvElectronicsPage(WebDriver driver) {
 		this.driver = driver;
@@ -26,21 +35,27 @@ public class PhTvElectronicsPage {
 		wait = new WebDriverWait(driver, 30, 500);
 
 	}
+	
+	public void IsElementPresents(){
+		objForThisLement = new IsElementPresent(driver);
+		objForThisLement.isElemenPresentInaPage(link);
+	}
 
 	public void GoToSmartTVElect() {
-
 		try {
-
-			JavascriptExecutor exutor = (JavascriptExecutor) driver;
-			exutor.executeScript("arguments[0].click();", link);
-			link.click();
-
-			// wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
+			
+			Actions tooltip = new Actions(driver);
+			tooltip.moveToElement(link).build().perform();
+			//link.click();
+			/*JavascriptExecutor exutor = (JavascriptExecutor) driver;
+			exutor.executeScript("arguments[0].click();", link);*/
+			//objForThisLement.isElemenPresentInaPage(titleForSecondPage);
+			//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
 			// //header.title-page>*:first-child
-			System.out.println("test passed");
-		} catch (Exception e) {
-			System.out.println(e.getStackTrace());
-			System.out.println("test failed");
+			System.out.println("Test Passed");
+		} catch (NullPointerException e) {
+			System.out.println(e.toString());
+			System.out.println("Test Failed");
 		}
 	}
 

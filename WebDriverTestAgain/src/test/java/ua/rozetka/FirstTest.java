@@ -26,28 +26,9 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Document;
 
 import ua.rozetka.PhTvElectronicsPage;
 
-public class FirstTest {
+public class FirstTest extends WebDriverSettings{
 
-	private WebDriver driver;
-
-	RozetkaSite objRozetka;
-
-	@BeforeClass
-	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
-	}
-
-	@BeforeTest
-	public void setUp() throws Exception {
-
-		driver = new ChromeDriver();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		// WebDriverWait wait = new WebDriverWait(driver, 30,500);	
-
-		driver.manage().window().maximize();
-
-	}
+	RozetkaSite objRozetka;	
 
 	@Test(priority = 0)
 	public void f() {
@@ -64,8 +45,12 @@ public class FirstTest {
 		} catch (Exception e) {
 			System.out.println("Test Failed");
 		}
+	}
 
+		@Test(priority = 1)
+		public void SecondPage() {
 		System.out.println("Step 2: Click to link Page of All SmatPhones");
+		objRozetka.electronics().IsElementPresents();
 		objRozetka.electronics().GoToSmartTVElect();
 		try {
 			System.out.println(objRozetka.electronics().getTitleFromPage());
@@ -74,26 +59,6 @@ public class FirstTest {
 			System.out.println("Test Passed");
 		} catch (Exception e) {
 			System.out.println("Test Failed");
-		}
-	}
-
-	@Test(priority = 1)
-	public void SecondPAge() {
-
-	}
-
-	/*
-	 * @Test(priority = 2) public void GoToSmarphones(){
-	 * driver.findElement(By.xpath(
-	 * "//p[contains(concat(' ', @class,' '), ' pab-h3 ')]/a[@href='https://rozetka.com.ua/telefony/c4627900/']"
-	 * )).click(); String title = driver.getTitle(); System.out.println(title);
-	 * }
-	 */
-
-	@AfterTest
-	public void Teardown() {
-		if (driver != null) {
-			driver.quit();
 		}
 	}
 
