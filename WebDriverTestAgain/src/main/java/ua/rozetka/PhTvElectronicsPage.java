@@ -17,41 +17,31 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PhTvElectronicsPage {
+public class PhTvElectronicsPage extends Page{
 
 	WebDriver driver;
-	WebDriverWait wait;	
-	IsElementPresent objForThisLement;
-
-	@FindBy(xpath = "//*[@id='3361']/a")
+	WebDriverWait wait;
+	
+	
+	@FindBy(xpath = "//a[contains(@href,'telefony-tv-i-ehlektronika')]")
 	WebElement link;
 	
 	@FindBy(xpath = "//*[@id='content-inner-block']//header/h1")
 	WebElement titleForSecondPage;
 
 	public PhTvElectronicsPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 30, 500);
 
 	}
 	
-	public void IsElementPresents(){
-		objForThisLement = new IsElementPresent(driver);
-		objForThisLement.isElemenPresentInaPage(link);
-	}
+	
 
 	public void GoToSmartTVElect() {
 		try {
-			
-			Actions tooltip = new Actions(driver);
-			tooltip.moveToElement(link).build().perform();
-			//link.click();
-			/*JavascriptExecutor exutor = (JavascriptExecutor) driver;
-			exutor.executeScript("arguments[0].click();", link);*/
-			//objForThisLement.isElemenPresentInaPage(titleForSecondPage);
-			//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
-			// //header.title-page>*:first-child
+			link.click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
 			System.out.println("Test Passed");
 		} catch (NullPointerException e) {
 			System.out.println(e.toString());

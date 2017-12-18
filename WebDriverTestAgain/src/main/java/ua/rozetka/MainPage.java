@@ -2,17 +2,22 @@ package ua.rozetka;
 
 import org.openqa.selenium.WebDriver;
 
-public class MainPage {
-	WebDriver driver;
+public class MainPage extends Page{
+	WebDriver driver;	
 
-	
+	/**
+	 * @param driver
+	 */
 	public MainPage(WebDriver driver) {
+		super(driver);
+        url = "http://rozetka.com.ua/";
 		// TODO Auto-generated constructor stub
-		this.driver = driver;
 	}
-
 
 	public String getTitleManePage() {
 		return driver.getTitle();
 	}
+	
+
+
 }

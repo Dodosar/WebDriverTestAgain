@@ -8,7 +8,6 @@
           <include name="SecondPage"/>
           <include name="setupClass"/>
           <include name="setUp"/>
-          <include name="Teardown"/>
         </methods>
       </class> <!-- ua.rozetka.FirstTest -->
     </classes>
