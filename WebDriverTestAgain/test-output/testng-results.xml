@@ -1,32 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="18764" started-at="2017-12-19T15:18:59Z" finished-at="2017-12-19T15:19:18Z">
+  <suite name="Suite" duration-ms="9057" started-at="2017-12-19T15:36:54Z" finished-at="2017-12-19T15:37:03Z">
     <groups>
     </groups>
-    <test name="ChromeTest" duration-ms="18764" started-at="2017-12-19T15:18:59Z" finished-at="2017-12-19T15:19:18Z">
+    <test name="ChromeTest" duration-ms="9057" started-at="2017-12-19T15:36:54Z" finished-at="2017-12-19T15:37:03Z">
       <class name="ua.rozetka.FirstTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="setUp" is-config="true" duration-ms="4139" started-at="2017-12-19T17:18:59Z" finished-at="2017-12-19T17:19:03Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setUp" is-config="true" duration-ms="4152" started-at="2017-12-19T17:36:54Z" finished-at="2017-12-19T17:36:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="setupClass" is-config="true" duration-ms="947" started-at="2017-12-19T17:19:03Z" finished-at="2017-12-19T17:19:04Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setupClass" is-config="true" duration-ms="881" started-at="2017-12-19T17:36:58Z" finished-at="2017-12-19T17:36:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="f()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="f" duration-ms="7666" started-at="2017-12-19T17:19:04Z" finished-at="2017-12-19T17:19:12Z">
+        <test-method status="PASS" signature="f()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="f" duration-ms="3669" started-at="2017-12-19T17:36:59Z" finished-at="2017-12-19T17:37:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="SecondPage" duration-ms="4568" started-at="2017-12-19T17:19:12Z" finished-at="2017-12-19T17:19:16Z">
+        <test-method status="FAIL" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="SecondPage" duration-ms="342" started-at="2017-12-19T17:37:02Z" finished-at="2017-12-19T17:37:03Z">
+          <exception class="java.lang.AssertionError">
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
+	at ua.rozetka.Page.CheckTheTitle(Page.java:66)
+	at ua.rozetka.PhTvElectronicsPage.GoToSmartTVElect(PhTvElectronicsPage.java:37)
+	at ua.rozetka.FirstTest.SecondPage(FirstTest.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SecondPage -->
-        <test-method status="PASS" signature="Teardown()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="Teardown" is-config="true" duration-ms="1433" started-at="2017-12-19T17:19:16Z" finished-at="2017-12-19T17:19:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Teardown -->
       </class> <!-- ua.rozetka.FirstTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->

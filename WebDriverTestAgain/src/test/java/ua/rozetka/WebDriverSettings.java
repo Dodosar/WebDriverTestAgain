@@ -28,11 +28,11 @@ public class WebDriverSettings {
 		driver.manage().window().maximize();
 	}
 	
-	@AfterTest
+	/*@AfterTest
 	public void Teardown() {
 		if (driver != null) {
 			driver.quit();
 		}
-	}
+	}*/
 
 }

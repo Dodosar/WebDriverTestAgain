@@ -45,29 +45,26 @@ public class Page {
 	public Page then() {
 		return this;
 	}
-	
+
 	public Page and() {
 		return this;
-	}	
-	
-	public Page clickON(WebElement element){
+	}
+
+	public Page clickON(WebElement element) {
 		isElemenPresentInaPage(element);
 		element.click();
 		return this;
 	}
 
-	
 	public String getTitleManePage() {
 		System.out.println(driver.getTitle());
 		return driver.getTitle();
 	}
-	
-	public void CheckTheTitle(){
+
+	public void CheckTheTitle() {
 		try {
-			AssertJUnit
-					.assertTrue(and().
-							getTitleManePage().
-							equals(title.toString()));
+			AssertJUnit.assertTrue(and().getTitleManePage().equals(
+					title.toString()));
 			System.out.println("Test Passed");
 		} catch (Exception e) {
 			System.out.println("Test Failed");

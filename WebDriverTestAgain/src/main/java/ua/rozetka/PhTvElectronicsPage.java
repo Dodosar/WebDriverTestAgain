@@ -17,32 +17,24 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PhTvElectronicsPage extends Page{
+public class PhTvElectronicsPage extends Page {
 
 	WebDriver driver;
 	WebDriverWait wait;
-	
-	
+
 	@FindBy(xpath = "//a[contains(@href,'telefony-tv-i-ehlektronika')]")
 	WebElement link;
-	
-	@FindBy(xpath = "//*[@id='content-inner-block']//header/h1")
-	WebElement titleForSecondPage;
 
 	public PhTvElectronicsPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 30, 500);
-
+		title = TitleNames.SMARTPAGE;
 	}
-	
-	
-	
 
 	public void GoToSmartTVElect() {
 		try {
-			then().clickON(link);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
+			and().clickON(link).then().clickON(link).CheckTheTitle();
 			System.out.println("Test 2 Passed");
 		} catch (NullPointerException e) {
 			System.out.println(e.toString());
