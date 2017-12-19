@@ -1,8 +1,5 @@
 package ua.rozetka;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 public enum TitleNames {
 	MAINPAGE("»нтернет-магазин ROZETKAЩ: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"),
     

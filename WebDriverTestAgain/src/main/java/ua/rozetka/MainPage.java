@@ -11,13 +11,10 @@ public class MainPage extends Page{
 	public MainPage(WebDriver driver) {
 		super(driver);
         url = "http://rozetka.com.ua/";
+        title = TitleNames.MAINPAGE;
 		// TODO Auto-generated constructor stub
 	}
-
-	public String getTitleManePage() {
-		return driver.getTitle();
-	}
 	
-
+	
 
 }

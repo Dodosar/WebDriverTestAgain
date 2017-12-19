@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.AssertJUnit;
 
 public class Page {
 	protected String url = "";
+	protected TitleNames title;
 	protected WebDriver driver;
 
 	public Page(WebDriver driver) {
@@ -51,14 +52,26 @@ public class Page {
 	
 	public Page clickON(WebElement element){
 		isElemenPresentInaPage(element);
-		driver.findElements(By.xpath(getXpath(element)));
+		element.click();
 		return this;
 	}
 
-	private String getXpath(WebElement element) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public String getTitleManePage() {
+		System.out.println(driver.getTitle());
+		return driver.getTitle();
 	}
-
+	
+	public void CheckTheTitle(){
+		try {
+			AssertJUnit
+					.assertTrue(and().
+							getTitleManePage().
+							equals(title.toString()));
+			System.out.println("Test Passed");
+		} catch (Exception e) {
+			System.out.println("Test Failed");
+		}
+	}
 
 }
