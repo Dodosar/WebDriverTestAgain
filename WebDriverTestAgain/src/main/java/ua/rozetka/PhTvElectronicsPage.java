@@ -41,7 +41,7 @@ public class PhTvElectronicsPage extends Page{
 
 	public void GoToSmartTVElect() {
 		try {
-			and().clickON(link).
+			then().clickON(link);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='content-inner-block']//header/h1")));
 			System.out.println("Test 2 Passed");
 		} catch (NullPointerException e) {
