@@ -2,32 +2,31 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="9057" started-at="2017-12-19T15:36:54Z" finished-at="2017-12-19T15:37:03Z">
+  <suite name="Suite" duration-ms="10878" started-at="2018-01-31T14:03:22Z" finished-at="2018-01-31T14:03:33Z">
     <groups>
     </groups>
-    <test name="ChromeTest" duration-ms="9057" started-at="2017-12-19T15:36:54Z" finished-at="2017-12-19T15:37:03Z">
+    <test name="ChromeTest" duration-ms="10878" started-at="2018-01-31T14:03:22Z" finished-at="2018-01-31T14:03:33Z">
       <class name="ua.rozetka.FirstTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setUp" is-config="true" duration-ms="4152" started-at="2017-12-19T17:36:54Z" finished-at="2017-12-19T17:36:58Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setUp" is-config="true" duration-ms="4183" started-at="2018-01-31T16:03:22Z" finished-at="2018-01-31T16:03:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setupClass" is-config="true" duration-ms="881" started-at="2017-12-19T17:36:58Z" finished-at="2017-12-19T17:36:59Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="setupClass" is-config="true" duration-ms="772" started-at="2018-01-31T16:03:26Z" finished-at="2018-01-31T16:03:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="f()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="f" duration-ms="3669" started-at="2017-12-19T17:36:59Z" finished-at="2017-12-19T17:37:02Z">
+        <test-method status="PASS" signature="MainPage()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="MainPage" duration-ms="4650" started-at="2018-01-31T16:03:27Z" finished-at="2018-01-31T16:03:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="FAIL" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="SecondPage" duration-ms="342" started-at="2017-12-19T17:37:02Z" finished-at="2017-12-19T17:37:03Z">
+        </test-method> <!-- MainPage -->
+        <test-method status="FAIL" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@5e5792a0]" name="SecondPage" duration-ms="1255" started-at="2018-01-31T16:03:32Z" finished-at="2018-01-31T16:03:33Z">
           <exception class="java.lang.AssertionError">
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 
 	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
 	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
 	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at ua.rozetka.Page.CheckTheTitle(Page.java:66)
-	at ua.rozetka.PhTvElectronicsPage.GoToSmartTVElect(PhTvElectronicsPage.java:37)
+	at ua.rozetka.Page.CheckTheTitle(Page.java:80)
 	at ua.rozetka.FirstTest.SecondPage(FirstTest.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)

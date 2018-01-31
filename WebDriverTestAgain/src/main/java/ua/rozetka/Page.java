@@ -12,11 +12,18 @@ public class Page {
 	protected String url = "";
 	protected TitleNames title;
 	protected WebDriver driver;
+	protected WebElement link;
+	
 
 	public Page(WebDriver driver) {
 		this.driver = driver;
 	}
 
+	protected WebElement GetLink()
+	{
+		return link;
+	}
+	
 	public WebDriver getDriver() {
 		return driver;
 	}
@@ -49,6 +56,13 @@ public class Page {
 	public Page and() {
 		return this;
 	}
+	
+	public Page clickOnXpath() {
+		isElemenPresentInaPage(GetLink());
+		GetLink().click();
+		pause(1);
+		return this;
+	}
 
 	public Page clickON(WebElement element) {
 		isElemenPresentInaPage(element);
@@ -56,19 +70,28 @@ public class Page {
 		return this;
 	}
 
-	public String getTitleManePage() {
+	public String getTitlePage() {
 		System.out.println(driver.getTitle());
 		return driver.getTitle();
 	}
 
 	public void CheckTheTitle() {
-		try {
-			AssertJUnit.assertTrue(and().getTitleManePage().equals(
+		try {		
+			AssertJUnit.assertTrue(getTitlePage().equals(
 					title.toString()));
-			System.out.println("Test Passed");
+			title = null;
+			System.out.println("Title Correct");
 		} catch (Exception e) {
-			System.out.println("Test Failed");
+			System.out.println("Title Incorrect");
 		}
+	}
+	
+	public static void pause(int time){
+		 try {
+	            Thread.sleep(time*1000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
 	}
 
 }

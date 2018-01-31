@@ -7,7 +7,7 @@ public class FirstTest extends WebDriverSettings {
 	RozetkaSite objRozetka;
 
 	@Test(priority = 0)
-	public void f() {
+	public void MainPage() {
 		objRozetka = new RozetkaSite(driver);
 		System.out.println("Step 1: Check Title on Main Page");
 		objRozetka.mainPage().open().and().CheckTheTitle();
@@ -16,16 +16,9 @@ public class FirstTest extends WebDriverSettings {
 	@Test(priority = 1)
 	public void SecondPage() {
 		System.out.println("Step 2: Click to link Page of All SmatPhones");
-		objRozetka.electronics().GoToSmartTVElect();
+		objRozetka.electronics().clickOnXpath().then().CheckTheTitle();
+		
 
-		/*
-		 * try {
-		 * System.out.println(objRozetka.electronics().getTitleFromPage());
-		 * AssertJUnit.assertTrue(objRozetka.electronics().getTitleFromPage()
-		 * .equals(TitleNames.SMARTPAGE.toString()));
-		 * System.out.println("Test Passed"); } catch (Exception e) {
-		 * System.out.println("Test Failed"); }
-		 */
 	}
 
 }
