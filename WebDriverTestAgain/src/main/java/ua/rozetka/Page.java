@@ -30,6 +30,7 @@ public class Page {
 
 	public Page open() {
 		driver.get(url);
+		pause(1);
 		System.out.println("open page " + url);
 		return this;
 	}
@@ -60,7 +61,7 @@ public class Page {
 	public Page clickOnXpath() {
 		isElemenPresentInaPage(GetLink());
 		GetLink().click();
-		pause(1);
+		
 		return this;
 	}
 

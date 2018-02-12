@@ -15,10 +15,14 @@ public class FirstTest extends WebDriverSettings {
 
 	@Test(priority = 1)
 	public void SecondPage() {
-		System.out.println("Step 2: Click to link Page of All SmatPhones");
+		System.out.println("Step 2: Click to link Page of All SmartPhones");
 		objRozetka.electronics().clickOnXpath().then().CheckTheTitle();
-		
-
+	}
+	
+	@Test(priority = 2)
+	public void TelephonePage(){
+		System.out.println("Step 3: Click to link Page of All Phones");
+		objRozetka.smartphone().clickOnXpath().then().CheckTheTitle();		
 	}
 
 }

@@ -14,6 +14,8 @@ public class RozetkaSite {
 	
 	public PhTvElectronicsPage electronics() {return new PhTvElectronicsPage(driver);}
 	
+	public TelephonePage smartphone() {return new TelephonePage(driver);}
+	
 	
 	
 }
