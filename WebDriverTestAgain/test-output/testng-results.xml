@@ -1,103 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="13954" started-at="2018-02-12T13:49:35Z" finished-at="2018-02-12T13:49:49Z">
+  <suite name="Suite" duration-ms="22958" started-at="2018-02-12T14:56:38Z" finished-at="2018-02-12T14:57:01Z">
     <groups>
     </groups>
-    <test name="ChromeTest" duration-ms="13954" started-at="2018-02-12T13:49:35Z" finished-at="2018-02-12T13:49:49Z">
+    <test name="ChromeTest" duration-ms="22958" started-at="2018-02-12T14:56:38Z" finished-at="2018-02-12T14:57:01Z">
       <class name="ua.rozetka.FirstTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="setUp" is-config="true" duration-ms="4094" started-at="2018-02-12T15:49:35Z" finished-at="2018-02-12T15:49:39Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="setUp" is-config="true" duration-ms="4120" started-at="2018-02-12T16:56:38Z" finished-at="2018-02-12T16:56:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="setupClass" is-config="true" duration-ms="839" started-at="2018-02-12T15:49:39Z" finished-at="2018-02-12T15:49:40Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="setupClass" is-config="true" duration-ms="864" started-at="2018-02-12T16:56:42Z" finished-at="2018-02-12T16:56:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="MainPage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="MainPage" duration-ms="7174" started-at="2018-02-12T15:49:40Z" finished-at="2018-02-12T15:49:47Z">
+        <test-method status="PASS" signature="MainPage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="MainPage" duration-ms="5846" started-at="2018-02-12T16:56:43Z" finished-at="2018-02-12T16:56:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MainPage -->
-        <test-method status="FAIL" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="SecondPage" duration-ms="238" started-at="2018-02-12T15:49:47Z" finished-at="2018-02-12T15:49:47Z">
-          <exception class="java.lang.AssertionError">
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at ua.rozetka.Page.CheckTheTitle(Page.java:81)
-	at ua.rozetka.FirstTest.SecondPage(FirstTest.java:19)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="SecondPage" duration-ms="2528" started-at="2018-02-12T16:56:49Z" finished-at="2018-02-12T16:56:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SecondPage -->
-        <test-method status="FAIL" signature="TelephonePage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="TelephonePage" duration-ms="114" started-at="2018-02-12T15:49:47Z" finished-at="2018-02-12T15:49:47Z">
-          <exception class="java.lang.AssertionError">
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at ua.rozetka.Page.CheckTheTitle(Page.java:81)
-	at ua.rozetka.FirstTest.TelephonePage(FirstTest.java:25)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="TelephonePage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="TelephonePage" duration-ms="4037" started-at="2018-02-12T16:56:52Z" finished-at="2018-02-12T16:56:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TelephonePage -->
-        <test-method status="PASS" signature="Teardown()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="Teardown" is-config="true" duration-ms="1476" started-at="2018-02-12T15:49:47Z" finished-at="2018-02-12T15:49:49Z">
+        <test-method status="PASS" signature="SmartPhonePage()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="SmartPhonePage" duration-ms="4124" started-at="2018-02-12T16:56:56Z" finished-at="2018-02-12T16:57:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SmartPhonePage -->
+        <test-method status="PASS" signature="Teardown()[pri:0, instance:ua.rozetka.FirstTest@26653222]" name="Teardown" is-config="true" duration-ms="1422" started-at="2018-02-12T16:57:00Z" finished-at="2018-02-12T16:57:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
