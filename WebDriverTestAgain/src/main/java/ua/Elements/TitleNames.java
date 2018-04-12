@@ -1,4 +1,4 @@
-package ua.rozetka;
+package ua.Elements;
 
 public enum TitleNames {
 	MAINPAGE("»нтернет-магазин ROZETKAЩ: фототехника, видеотехника, аудиотехника, компьютеры и компьютерные комплектующие"),

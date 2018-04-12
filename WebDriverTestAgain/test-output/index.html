@@ -2,9 +2,10 @@
 
 <html>
   <head>
+  <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -90,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -107,6 +108,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="ua.rozetka.FirstTest" hash-for-method="SecondPage">SecondPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="ua.rozetka.FirstTest" hash-for-method="SelectProductWithStock">SelectProductWithStock</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -153,6 +159,13 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="SelectProductWithStock">
+                  </a> <!-- SelectProductWithStock -->
+                  <span class="method-name">SelectProductWithStock</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="SmartPhonePage">
                   </a> <!-- SmartPhonePage -->
                   <span class="method-name">SmartPhonePage</span>
@@ -176,7 +189,7 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;test name=&quot;ChromeTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;ua.rozetka.FirstTest&quot;/&gt;
@@ -219,28 +232,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'MainPage')
 data.setCell(0, 2, 'ua.rozetka.FirstTest')
-data.setCell(0, 3, 5846);
+data.setCell(0, 3, 5046);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'SmartPhonePage')
+data.setCell(1, 1, 'TelephonePage')
 data.setCell(1, 2, 'ua.rozetka.FirstTest')
-data.setCell(1, 3, 4124);
+data.setCell(1, 3, 3851);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TelephonePage')
+data.setCell(2, 1, 'SmartPhonePage')
 data.setCell(2, 2, 'ua.rozetka.FirstTest')
-data.setCell(2, 3, 4037);
+data.setCell(2, 3, 3390);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'SecondPage')
 data.setCell(3, 2, 'ua.rozetka.FirstTest')
-data.setCell(3, 3, 2528);
+data.setCell(3, 3, 1916);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'SelectProductWithStock')
+data.setCell(4, 2, 'ua.rozetka.FirstTest')
+data.setCell(4, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -273,27 +290,39 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">4124 ms</span>
+                <span class="method-start">4931 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">createTable</span>
+                <span class="method-start">5816 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">MainPage</span>
-                <span class="method-start">4990 ms</span>
+                <span class="method-start">6525 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SecondPage</span>
-                <span class="method-start">10838 ms</span>
+                <span class="method-start">11573 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TelephonePage</span>
-                <span class="method-start">13368 ms</span>
+                <span class="method-start">13490 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SmartPhonePage</span>
-                <span class="method-start">17406 ms</span>
+                <span class="method-start">17342 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SelectProductWithStock</span>
+                <span class="method-start">20733 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">checkTable</span>
+                <span class="method-start">20735 ms</span>
+              </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">Teardown</span>
-                <span class="method-start">21533 ms</span>
+                <span class="method-start">20762 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

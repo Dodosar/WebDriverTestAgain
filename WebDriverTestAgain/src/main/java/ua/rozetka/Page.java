@@ -1,18 +1,24 @@
 package ua.rozetka;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.AssertJUnit;
+
+import ua.Elements.Elements;
+import ua.Elements.TitleNames;
 
 public class Page {
 	protected String url = "";
 	protected TitleNames title;
 	protected WebDriver driver;
 	protected WebElement link;
+	protected WebElement stock; 
+		
+	
 	
 
 	public Page(WebDriver driver) {
@@ -22,7 +28,8 @@ public class Page {
 	protected WebElement GetLink()
 	{
 		return link;
-	}
+	}	
+
 	
 	public WebDriver getDriver() {
 		return driver;
@@ -60,8 +67,7 @@ public class Page {
 	
 	public Page clickOnXpath() {
 		isElemenPresentInaPage(GetLink());
-		GetLink().click();
-		
+		GetLink().click();		
 		return this;
 	}
 
@@ -86,6 +92,20 @@ public class Page {
 			System.out.println("Title Incorrect");
 		}
 	}
+		
+    protected WebElement getElement(String elementName){
+        return driver.findElement(By.xpath(getXPath(elementName)));
+    }
+
+    private String getXPath(String elementName) {
+		// TODO Auto-generated method stub    	
+		return Elements.getEntryForElementName(elementName).getXPath();
+	}
+
+	protected List<WebElement> getElements(String elementName){
+        return driver.findElements(By.xpath(getXPath(elementName)));
+    }
+	
 	
 	public static void pause(int time){
 		 try {

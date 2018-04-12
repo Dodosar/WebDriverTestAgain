@@ -7,32 +7,33 @@ import java.sql.ResultSet;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DataBase {
 	private static Connection connection = null;	
 	private static String username = "root";
 	private static String password = "Dima650065";	
-	private static String dbUrl = "jdbc:mysql://127.0.0.1:3306/test_emp";
-	private static boolean print = false;
-	
-	
-
-	
-	String createNewtable =
-	"CREATE TABLE `TopSmartPhones` (`Smartphone` VARCHAR(150) NOT NULL, Price varchar(255));";
-	
-	String  dropNewtable =
-	"DROP TABLE `TopSmartPhones`";
-	
-	String query = "select *  from TopSmartPhones;";
+	private static String dbUrl = "jdbc:mysql://127.0.0.1:3306/emp";
+	private static boolean print = false;	
 	
 	String InsertIntoQueary = "INSERT INTO TopSmartPhones (Smartphone,Price) VALUES ('','');";
 	
-	public static Connection getDBConnection(){
-	Connection dbConnection = null;
-	try{
-	// Load mysql jdbc driver
-	Class.forName("com.mysql.jdbc.Driver");
+	static Map<String, Integer> test = new HashMap<String, Integer>();
+	
+	public static void AddValues(){
+	test.put("test1", 10);
+	test.put("test2", 11);
+	}
+	
+	public static void InsertIntoValues(){
+		
+	}
+	
+	public static Connection getDBConnection(){		
+	Connection dbConnection = null;	
+	try{// Load mysql jdbc driver	
+		Class.forName("com.mysql.jdbc.Driver");
 	}catch(Exception e){
 		System.out.println("FAIL");
 	}
@@ -50,15 +51,38 @@ public class DataBase {
             DataBase.connection = getDBConnection();
         }
     }    	
-
-	
-    public static boolean execute (String query) {
-        boolean result = false;
+    
+    public static ResultSet select (String query) {
+        ResultSet result = null;
         PreparedStatement stmt = null;
         try {
             if(print)System.out.println("started: "+query);
             stmt = connection.prepareStatement(query);
-            stmt.executeUpdate();
+            result = stmt.executeQuery();
+    		while (result.next()) {
+    			String Id = result.getString(1);
+    			String Smartphone = result.getString(2);
+    			String Price = result.getString(3);
+    			System.out.println(Id + "  " + Smartphone + " " + Price);
+    		}		
+            if(print)System.out.println("complete: "+query);
+        } catch (SQLException e) {
+            if(print)e.printStackTrace();
+        } catch (Exception e) {
+            if(print)e.printStackTrace();
+        } finally {
+            return result;
+        }
+    }
+
+	
+    public static boolean execute (String query) {
+        boolean result = false;
+        Statement stmt = null;
+        try {
+            System.out.println("started: "+query);
+            stmt = connection.createStatement();
+            stmt.executeUpdate(query);
             result = true;
             if(print)System.out.println("complete: "+query);
         } catch (SQLException e) {
@@ -69,6 +93,8 @@ public class DataBase {
             return result;
         }
     }
+    
+
 
 	public static void close() {
 		try {

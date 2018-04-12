@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [ua.rozetka.FirstTest]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="ua.rozetka.FirstTest">
+        <methods>
+          <include name="MainPage"/>
+          <include name="SmartPhonePage"/>
+          <include name="TelephonePage"/>
+          <include name="SecondPage"/>
+          <include name="setupClass"/>
+          <include name="setUp"/>
+          <include name="createTable"/>
+        </methods>
+      </class> <!-- ua.rozetka.FirstTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [ua.rozetka.FirstTest] -->

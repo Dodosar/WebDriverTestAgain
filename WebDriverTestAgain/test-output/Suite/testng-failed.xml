@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test name="ChromeTest(failed)">
     <classes>
       <class name="ua.rozetka.FirstTest">
         <methods>
+          <include name="SmartPhonePage"/>
           <include name="TelephonePage"/>
           <include name="SecondPage"/>
           <include name="setupClass"/>
           <include name="setUp"/>
+          <include name="createTable"/>
+          <include name="checkTable"/>
           <include name="Teardown"/>
         </methods>
       </class> <!-- ua.rozetka.FirstTest -->

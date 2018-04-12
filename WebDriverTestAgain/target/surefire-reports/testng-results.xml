@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="ua.rozetka.FirstTest" duration-ms="25258" started-at="2018-04-06T13:01:49Z" finished-at="2018-04-06T13:02:14Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="25258" started-at="2018-04-06T13:01:49Z" finished-at="2018-04-06T13:02:14Z">
+      <class name="ua.rozetka.FirstTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="setUp" is-config="true" duration-ms="4179" started-at="2018-04-06T16:01:49Z" finished-at="2018-04-06T16:01:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="setupClass" is-config="true" duration-ms="937" started-at="2018-04-06T16:01:53Z" finished-at="2018-04-06T16:01:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupClass -->
+        <test-method status="PASS" signature="MainPage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="MainPage" duration-ms="5561" started-at="2018-04-06T16:01:54Z" finished-at="2018-04-06T16:02:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MainPage -->
+        <test-method status="PASS" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="SecondPage" duration-ms="8579" started-at="2018-04-06T16:02:00Z" finished-at="2018-04-06T16:02:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SecondPage -->
+        <test-method status="PASS" signature="TelephonePage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="TelephonePage" duration-ms="1966" started-at="2018-04-06T16:02:08Z" finished-at="2018-04-06T16:02:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TelephonePage -->
+        <test-method status="PASS" signature="SmartPhonePage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="SmartPhonePage" duration-ms="4032" started-at="2018-04-06T16:02:10Z" finished-at="2018-04-06T16:02:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SmartPhonePage -->
+      </class> <!-- ua.rozetka.FirstTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- ua.rozetka.FirstTest -->
+</testng-results>

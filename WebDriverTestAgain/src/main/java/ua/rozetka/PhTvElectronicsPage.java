@@ -10,9 +10,6 @@ public class PhTvElectronicsPage extends Page {
 
 	WebDriver driver;
 	WebDriverWait wait;
-	
-
-
 	@FindBy(xpath = "//a[contains(@href,'telefony-tv-i-ehlektronika')]")
 	protected WebElement link;
 

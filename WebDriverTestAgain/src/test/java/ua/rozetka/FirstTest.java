@@ -1,13 +1,10 @@
 package ua.rozetka;
 
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-import java.sql.SQLException;
-import java.util.function.ObjDoubleConsumer;
-
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.AfterClass;
 
 import ua.DB.DataBase;
 
@@ -17,16 +14,21 @@ public class FirstTest extends WebDriverSettings {
 	@BeforeClass
     public static void createTable(){
         DataBase.connect();
+        System.out.println("test Connection");
         DataBase.execute("drop table TopSmartPhones");
-        DataBase.execute("create table TopSmartPhones (" +
-                "  id int(100) unsigned NOT NULL auto_increment," +
-                "  name varchar(200) NOT NULL," +
-                "  price varchar(200) NOT NULL," +
-                "  PRIMARY KEY  (id)" +
-                ")");
+        DataBase.execute("create table TopSmartPhones (id int(10) unsigned NOT NULL auto_increment,name varchar(200) NOT NULL,price varchar(20) NOT NULL,PRIMARY KEY (id));");
+        DataBase.execute("INSERT INTO emp.TopSmartPhones (name,price) VALUES ('XAOMI','1500')");
+        DataBase.execute("INSERT INTO emp.TopSmartPhones (name,price) VALUES ('Meisu','3000')");
         DataBase.close();
-    }	
+    }
 	
+    @AfterClass
+    public static void checkTable(){
+        DataBase.connect();
+        DataBase.select("select * from TopSmartPhones");
+        DataBase.close();
+    }
+    
 
 	RozetkaSite objRozetka;
 
@@ -54,5 +56,12 @@ public class FirstTest extends WebDriverSettings {
 		System.out.println("Step 4: Click to link Page of SmartPhones");
 		objRozetka.smartphone().clickOnXpath().then().CheckTheTitle();
 	}
+	
+	@Test(priority = 4)
+	public void SelectProductWithStock(){
+		System.out.println("Step 4: OnFirstPageSelectProductsWithStock");
+		
+	}
+
 
 }
