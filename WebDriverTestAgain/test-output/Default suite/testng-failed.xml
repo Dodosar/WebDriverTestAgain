@@ -5,9 +5,11 @@
     <classes>
       <class name="ua.rozetka.FirstTest">
         <methods>
-          <include name="SecondPage"/>
+          <include name="MainPage"/>
           <include name="setupClass"/>
           <include name="setUp"/>
+          <include name="createTable"/>
+          <include name="checkTable"/>
           <include name="Teardown"/>
         </methods>
       </class> <!-- ua.rozetka.FirstTest -->

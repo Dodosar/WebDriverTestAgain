@@ -2,23 +2,23 @@ package ua.rozetka;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.io.File;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.AssertJUnit;
 
-import ua.Elements.Elements;
-import ua.Elements.TitleNames;
 
 public class Page {
 	protected String url = "";
 	protected TitleNames title;
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected WebElement link;
-	protected WebElement stock; 
-		
-	
+	static int b = 0;
 	
 
 	public Page(WebDriver driver) {
@@ -37,6 +37,12 @@ public class Page {
 
 	public Page open() {
 		driver.get(url);
+		try {
+			isExistPng();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		pause(1);
 		System.out.println("open page " + url);
 		return this;
@@ -54,16 +60,41 @@ public class Page {
 			System.out.println("xpath is correct");
 			return list.get(0).isDisplayed();
 		}
+	}	
+	
+	public boolean isXPathPresentInaPage(String a) {
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		List<WebElement> list = driver.findElements(By.xpath(a));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		if (list.size() == 0) {
+			System.out.println("xpath is incorrect");
+			return false;
+		} else {
+			System.out.println("xpath is correct");
+			return list.get(0).isDisplayed();
+		}
+	}	
 
-	}
 
 	public Page then() {
+		try {
+			isExistPng();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this;
 	}
 
 	public Page and() {
+		try {
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this;
 	}
+	
 	
 	public Page clickOnXpath() {
 		isElemenPresentInaPage(GetLink());
@@ -76,14 +107,21 @@ public class Page {
 		element.click();
 		return this;
 	}
-
+	
+    public Page clickOnXpath(String elementName){
+        getElement(elementName).click();
+        pause(1);
+        System.out.println("click on '" + elementName + "'");
+        return this;
+    }
 	public String getTitlePage() {
 		System.out.println(driver.getTitle());
 		return driver.getTitle();
 	}
 
 	public void CheckTheTitle() {
-		try {		
+		try {
+			System.out.println(title.toString());
 			AssertJUnit.assertTrue(getTitlePage().equals(
 					title.toString()));
 			title = null;
@@ -95,7 +133,9 @@ public class Page {
 		
     protected WebElement getElement(String elementName){
         return driver.findElement(By.xpath(getXPath(elementName)));
-    }
+    }   
+
+
 
     private String getXPath(String elementName) {
 		// TODO Auto-generated method stub    	
@@ -105,6 +145,33 @@ public class Page {
 	protected List<WebElement> getElements(String elementName){
         return driver.findElements(By.xpath(getXPath(elementName)));
     }
+	
+	public static void takeSnapShot(WebDriver driver,String fileWithPath) throws Exception{
+		TakesScreenshot scrShot = ((TakesScreenshot)driver);
+			File ScrFile = scrShot.getScreenshotAs(OutputType.FILE);
+			File DestFile = new File(fileWithPath);
+			
+			FileUtils.copyFile(ScrFile, DestFile);
+	}
+	
+	
+	public static void isExistPng(){
+		String  a = "D://ProjectWebDriverRozetka/test.png";
+		try {
+			if(new File(a).exists()){
+				a = String.format("D://ProjectWebDriverRozetka/test%d.png",b++);
+				System.out.println(a);
+				takeSnapShot(driver,a);
+			}
+			else {
+				takeSnapShot(driver,a);
+			}
+			} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+
+	}
 	
 	
 	public static void pause(int time){

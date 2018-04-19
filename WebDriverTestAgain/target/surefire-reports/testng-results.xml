@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="ua.rozetka.FirstTest" duration-ms="25258" started-at="2018-04-06T13:01:49Z" finished-at="2018-04-06T13:02:14Z">
+  <suite name="ua.rozetka.FirstTest" duration-ms="22514" started-at="2018-04-13T14:14:08Z" finished-at="2018-04-13T14:14:31Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="25258" started-at="2018-04-06T13:01:49Z" finished-at="2018-04-06T13:02:14Z">
+    <test name="Command line test" duration-ms="22514" started-at="2018-04-13T14:14:08Z" finished-at="2018-04-13T14:14:31Z">
       <class name="ua.rozetka.FirstTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="setUp" is-config="true" duration-ms="4179" started-at="2018-04-06T16:01:49Z" finished-at="2018-04-06T16:01:53Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="setUp" is-config="true" duration-ms="4150" started-at="2018-04-13T17:14:08Z" finished-at="2018-04-13T17:14:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="setupClass" is-config="true" duration-ms="937" started-at="2018-04-06T16:01:53Z" finished-at="2018-04-06T16:01:54Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="setupClass" is-config="true" duration-ms="745" started-at="2018-04-13T17:14:13Z" finished-at="2018-04-13T17:14:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="MainPage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="MainPage" duration-ms="5561" started-at="2018-04-06T16:01:54Z" finished-at="2018-04-06T16:02:00Z">
+        <test-method status="PASS" signature="createTable()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="createTable" is-config="true" duration-ms="632" started-at="2018-04-13T17:14:13Z" finished-at="2018-04-13T17:14:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTable -->
+        <test-method status="PASS" signature="MainPage()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="MainPage" duration-ms="4751" started-at="2018-04-13T17:14:14Z" finished-at="2018-04-13T17:14:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MainPage -->
-        <test-method status="PASS" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="SecondPage" duration-ms="8579" started-at="2018-04-06T16:02:00Z" finished-at="2018-04-06T16:02:08Z">
+        <test-method status="PASS" signature="SecondPage()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="SecondPage" duration-ms="1196" started-at="2018-04-13T17:14:19Z" finished-at="2018-04-13T17:14:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SecondPage -->
-        <test-method status="PASS" signature="TelephonePage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="TelephonePage" duration-ms="1966" started-at="2018-04-06T16:02:08Z" finished-at="2018-04-06T16:02:10Z">
+        <test-method status="PASS" signature="TelephonePage()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="TelephonePage" duration-ms="1961" started-at="2018-04-13T17:14:20Z" finished-at="2018-04-13T17:14:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TelephonePage -->
-        <test-method status="PASS" signature="SmartPhonePage()[pri:0, instance:ua.rozetka.FirstTest@15975490]" name="SmartPhonePage" duration-ms="4032" started-at="2018-04-06T16:02:10Z" finished-at="2018-04-06T16:02:14Z">
+        <test-method status="PASS" signature="SmartPhonePage()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="SmartPhonePage" duration-ms="4026" started-at="2018-04-13T17:14:22Z" finished-at="2018-04-13T17:14:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SmartPhonePage -->
+        <test-method status="PASS" signature="SelectProductWithStock()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="SelectProductWithStock" duration-ms="3668" started-at="2018-04-13T17:14:26Z" finished-at="2018-04-13T17:14:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SelectProductWithStock -->
+        <test-method status="PASS" signature="checkTable()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="checkTable" is-config="true" duration-ms="25" started-at="2018-04-13T17:14:30Z" finished-at="2018-04-13T17:14:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTable -->
+        <test-method status="PASS" signature="Teardown()[pri:0, instance:ua.rozetka.FirstTest@6615435c]" name="Teardown" is-config="true" duration-ms="1335" started-at="2018-04-13T17:14:30Z" finished-at="2018-04-13T17:14:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
       </class> <!-- ua.rozetka.FirstTest -->
     </test> <!-- Command line test -->
   </suite> <!-- ua.rozetka.FirstTest -->

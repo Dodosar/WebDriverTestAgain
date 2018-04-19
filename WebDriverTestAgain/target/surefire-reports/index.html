@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -107,6 +107,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-ua.rozetka.FirstTest" title="ua.rozetka.FirstTest" hash-for-method="SecondPage">SecondPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-ua.rozetka.FirstTest" title="ua.rozetka.FirstTest" hash-for-method="SelectProductWithStock">SelectProductWithStock</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -149,6 +154,13 @@
                   <a name="SecondPage">
                   </a> <!-- SecondPage -->
                   <span class="method-name">SecondPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SelectProductWithStock">
+                  </a> <!-- SelectProductWithStock -->
+                  <span class="method-name">SelectProductWithStock</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -218,28 +230,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SecondPage')
+data.setCell(0, 1, 'MainPage')
 data.setCell(0, 2, 'ua.rozetka.FirstTest')
-data.setCell(0, 3, 8579);
+data.setCell(0, 3, 4751);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'MainPage')
+data.setCell(1, 1, 'SmartPhonePage')
 data.setCell(1, 2, 'ua.rozetka.FirstTest')
-data.setCell(1, 3, 5561);
+data.setCell(1, 3, 4026);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'SmartPhonePage')
+data.setCell(2, 1, 'SelectProductWithStock')
 data.setCell(2, 2, 'ua.rozetka.FirstTest')
-data.setCell(2, 3, 4032);
+data.setCell(2, 3, 3668);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'TelephonePage')
 data.setCell(3, 2, 'ua.rozetka.FirstTest')
-data.setCell(3, 3, 1966);
+data.setCell(3, 3, 1961);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'SecondPage')
+data.setCell(4, 2, 'ua.rozetka.FirstTest')
+data.setCell(4, 3, 1196);
 window.suiteTableData['ua.rozetka.FirstTest']= { tableData: data, tableDiv: 'times-div-ua.rozetka.FirstTest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-ua.rozetka.FirstTest">
               </div> <!-- times-div-ua.rozetka.FirstTest -->
             </div> <!-- times-div -->
@@ -272,24 +288,40 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">4182 ms</span>
+                <span class="method-start">4169 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">createTable</span>
+                <span class="method-start">4914 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">MainPage</span>
-                <span class="method-start">5119 ms</span>
+                <span class="method-start">5549 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SecondPage</span>
-                <span class="method-start">10680 ms</span>
+                <span class="method-start">10300 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TelephonePage</span>
-                <span class="method-start">19259 ms</span>
+                <span class="method-start">11496 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SmartPhonePage</span>
-                <span class="method-start">21225 ms</span>
+                <span class="method-start">13457 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SelectProductWithStock</span>
+                <span class="method-start">17483 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">checkTable</span>
+                <span class="method-start">21151 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">Teardown</span>
+                <span class="method-start">21177 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

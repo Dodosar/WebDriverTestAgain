@@ -6,9 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 public class SmartPhonePage extends Page{
 	
-	WebDriver driver;
 	WebDriverWait wait;
 	@FindBy(xpath="//a[contains(@href,'preset=smartfon')]")
 	WebElement link;

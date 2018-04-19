@@ -2,8 +2,9 @@ package ua.rozetka;
 
 import org.openqa.selenium.WebDriver;
 
+
+
 public class MainPage extends Page {
-	WebDriver driver;
 
 	/**
 	 * @param driver

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 public class DataBase {
 	private static Connection connection = null;	
@@ -16,23 +17,20 @@ public class DataBase {
 	private static String password = "Dima650065";	
 	private static String dbUrl = "jdbc:mysql://127.0.0.1:3306/emp";
 	private static boolean print = false;	
+
 	
+	public static void setPrint(boolean p){print = p;}
+
 	String InsertIntoQueary = "INSERT INTO TopSmartPhones (Smartphone,Price) VALUES ('','');";
 	
-	static Map<String, Integer> test = new HashMap<String, Integer>();
-	
-	public static void AddValues(){
-	test.put("test1", 10);
-	test.put("test2", 11);
-	}
-	
+
 	public static void InsertIntoValues(){
 		
 	}
 	
 	public static Connection getDBConnection(){		
 	Connection dbConnection = null;	
-	try{// Load mysql jdbc driver	
+	try{// Load mysql jdbc driver
 		Class.forName("com.mysql.jdbc.Driver");
 	}catch(Exception e){
 		System.out.println("FAIL");

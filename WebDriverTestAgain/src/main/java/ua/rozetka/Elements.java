@@ -1,6 +1,9 @@
-package ua.Elements;
+package ua.rozetka;
+
+
 
 public enum Elements {
+		
     PRODUCT_NAME("product name", "//div[@class='g-i-tile-i-box-desc'][.//*[@class='g-tag g-tag-icon-middle-popularity sprite']]//*[@class='g-i-tile-i-title clearfix']/a"),
     PRODUCT_PRICE("product price", "//div[@class='g-i-tile-i-box-desc'][.//*[@class='g-tag g-tag-icon-middle-popularity sprite']]//*[@class='g-price g-price-cheaper' or @class='g-price']"),
 
@@ -16,7 +19,6 @@ public enum Elements {
         this.name = name;
         this.xpath = xpath;
     }
-
     public String getXPath() {
         return xpath;
     }
