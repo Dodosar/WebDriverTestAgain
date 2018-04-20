@@ -1,10 +1,11 @@
 package ua.rozetka;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestListener;
 
 
 
-public class MainPage extends Page {
+public class MainPage extends Page{
 
 	/**
 	 * @param driver

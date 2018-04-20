@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: ua.rozetka.FirstTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.928 sec
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 27.535 sec <<< FAILURE!
+MainPage(ua.rozetka.FirstTest)  Time elapsed: 5.021 sec  <<< FAILURE!
+java.lang.AssertionError: 
+	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
+	at ua.rozetka.Page.CheckTheTitle(Page.java:107)
+	at ua.rozetka.FirstTest.MainPage(FirstTest.java:49)
+
+SmartPhonePage(ua.rozetka.FirstTest)  Time elapsed: 3.618 sec  <<< FAILURE!
+java.lang.AssertionError: 
+	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
+	at ua.rozetka.Page.CheckTheTitle(Page.java:107)
+	at ua.rozetka.FirstTest.SmartPhonePage(FirstTest.java:67)
+

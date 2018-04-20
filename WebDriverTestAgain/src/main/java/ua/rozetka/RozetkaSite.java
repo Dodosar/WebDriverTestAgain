@@ -20,7 +20,6 @@ public class RozetkaSite {
 	
 	public SelectProductsFromPages productlist(){return new SelectProductsFromPages(driver);}
 	
-	public ScreenShoot scrpage(){return new ScreenShoot(driver);}
-	
+
 	
 }

@@ -37,12 +37,6 @@ public class Page {
 
 	public Page open() {
 		driver.get(url);
-		try {
-			isExistPng();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		pause(1);
 		System.out.println("open page " + url);
 		return this;
@@ -77,21 +71,10 @@ public class Page {
 
 
 	public Page then() {
-		try {
-			isExistPng();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return this;
 	}
 
 	public Page and() {
-		try {
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return this;
 	}
 	
@@ -115,7 +98,6 @@ public class Page {
         return this;
     }
 	public String getTitlePage() {
-		System.out.println(driver.getTitle());
 		return driver.getTitle();
 	}
 
@@ -155,12 +137,11 @@ public class Page {
 	}
 	
 	
-	public static void isExistPng(){
+	/*public static void isExistPng(){
 		String  a = "D://ProjectWebDriverRozetka/test.png";
 		try {
 			if(new File(a).exists()){
 				a = String.format("D://ProjectWebDriverRozetka/test%d.png",b++);
-				System.out.println(a);
 				takeSnapShot(driver,a);
 			}
 			else {
@@ -170,8 +151,7 @@ public class Page {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
-
-	}
+	}*/
 	
 	
 	public static void pause(int time){

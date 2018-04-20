@@ -8,9 +8,9 @@
           <include name="setupClass"/>
           <include name="SelectProductWithStock"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="createTable"/>
           <include name="checkTable"/>
-          <include name="Teardown"/>
         </methods>
       </class> <!-- ua.rozetka.FirstTest -->
     </classes>

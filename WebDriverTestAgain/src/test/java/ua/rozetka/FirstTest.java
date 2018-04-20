@@ -1,7 +1,10 @@
 package ua.rozetka;
 
+import org.testng.ITestListener;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
@@ -9,7 +12,10 @@ import org.testng.annotations.AfterClass;
 import ua.DB.DBResult;
 import ua.DB.DataBase;
 
-public class FirstTest extends WebDriverSettings {
+//@Listeners(RealTimeReport.class)
+//@Listeners(value=Report.class)
+@Listeners(PDFReport.class)
+public class FirstTest extends WebDriverSettings{
 
 	
 	@BeforeClass
@@ -29,7 +35,9 @@ public class FirstTest extends WebDriverSettings {
                 + result + "====================");*/
         DataBase.select("select * from TopSmartPhones");
         DataBase.close();
-    }
+    } 
+  
+    
     
 
 	RozetkaSite objRozetka;

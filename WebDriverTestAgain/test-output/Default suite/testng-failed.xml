@@ -6,7 +6,11 @@
       <class name="ua.rozetka.FirstTest">
         <methods>
           <include name="MainPage"/>
+          <include name="SmartPhonePage"/>
+          <include name="TelephonePage"/>
+          <include name="SecondPage"/>
           <include name="setupClass"/>
+          <include name="SelectProductWithStock"/>
           <include name="setUp"/>
           <include name="createTable"/>
           <include name="checkTable"/>
